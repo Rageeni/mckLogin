@@ -15,17 +15,10 @@ class WebViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        if UserDefaults.standard.value(forKey: "token") != nil {
-            let token = UserDefaults.standard.value(forKey: "token") as! String
-            let urlLink = URL(string: "https://mckinleyrice.com?token=\(token)")
-            let urlRequest = URLRequest(url: urlLink!)
-            webView.load(urlRequest)
-        } else {
-            let token = "QpwL5tke4Pnpja7X4"
-            let urlLink = URL(string: "https://mckinleyrice.com?token=\(token)")
-            let urlRequest = URLRequest(url: urlLink!)
-            webView.load(urlRequest)
-        }
+        let token = UserDefaults.standard.value(forKey: "token") as! String
+        let urlLink = URL(string: "https://mckinleyrice.com?token=\(token)")
+        let urlRequest = URLRequest(url: urlLink!)
+        webView.load(urlRequest)
     }
     
 }

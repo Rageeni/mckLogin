@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         print(deviceToken)
         let str = String(data: deviceToken, encoding: String.Encoding.utf8)
-        UserDefaults.standard.set(str, forKey: "token")
+        UserDefaults.standard.set((str ?? "QpwL5tke4Pnpja7X4"), forKey: "token")
     }
 
 
